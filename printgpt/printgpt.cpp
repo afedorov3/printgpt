@@ -112,7 +112,7 @@ void printhsize(UINT64 size, BOOL si)
 		}
 	}
 	if (suff)
-		wprintf_s(L"%.2f %s (%" FI64 L"u bytes)", fsize, suff, size);
+		wprintf_s(L"%.2f %s ( %" FI64 L"u bytes )", fsize, suff, size);
 	else
 		wprintf_s(L"%" FI64 L"u bytes", size);
 }
@@ -121,9 +121,9 @@ void printmbrentry(PDISK_DATA pDiskData, PMBR_ENTRY entry, UINT32 at)
 {
 	wprintf_s(	  L"    Type:              0x%02X", entry->type);
 	if (MBR_TYPES[entry->type].type != NULL) {
-		wprintf_s(L" (%s)", MBR_TYPES[entry->type].type);
+		wprintf_s(L" ( %s )", MBR_TYPES[entry->type].type);
 	} else if (MBR_TYPES[entry->type].origin != NULL) {
-		wprintf_s(L" (%s)", MBR_TYPES[entry->type].origin);
+		wprintf_s(L" ( %s )", MBR_TYPES[entry->type].origin);
 	}
 	wprintf_s(	L"\n    Status:            0x%02X%s"
 				L"\n    First LBA:         %" FI32 L"u",
@@ -300,9 +300,9 @@ BOOL printgptentry(PDISK_DATA pDiskData, PGPT_ENTRY entry, UINT num)
 	printGUID(entry->typeGUID);
 	if (type) {
 		if (type->os)
-			wprintf_s(L" (%s: %s)", type->os, type->type);
+			wprintf_s(L" ( %s: %s )", type->os, type->type);
 		else
-			wprintf_s(L" (%s)", type->type);
+			wprintf_s(L" ( %s )", type->type);
 	}
 	wprintf_s(L"\n    Unique GUID:       ");
 	printGUID(entry->uniqueGUID);
