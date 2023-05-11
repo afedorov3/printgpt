@@ -3,4 +3,6 @@
 /.vs/
 *.aps
 *.VC.db
+*.suo
 *.7z
+*.zip

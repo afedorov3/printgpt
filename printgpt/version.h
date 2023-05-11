@@ -17,7 +17,7 @@
 #endif
 
 #ifdef _WIN64
-#define PGPT_FILE_NAME "printgpt64.exe"
-#else
 #define PGPT_FILE_NAME "printgpt.exe"
+#else
+#define PGPT_FILE_NAME "printgpt32.exe"
 #endif
